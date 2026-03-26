@@ -39,6 +39,8 @@ fig, ax = plt.subplots()
 
 ball, = plt.plot([], [], 'o', color='b')
 ball_line, = plt.plot([], [], '-', color='b')
+
+
 plt.plot([0], [0], 'o', color='y', ms=20)
 
 def animate(i):
