@@ -3,7 +3,7 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-#Определяем переменную величину
+# Определяем переменную величину
 frames = 500
 seconds_in_year = 365 * 24 * 60 * 60
 years = 1
@@ -33,35 +33,28 @@ s0 = (x0, v_x0, y0, v_y0)
 
 sol = odeint(move_func, s0, t)
 
-#Строим решение в виде графика и анимируем
+# Решаем систему диф. уравнений
+def solve_func(i, key):
+    if key == 'point':
+        x = sol[i, 0]
+        y = sol[i, 2]
+    else:
+        x = sol[:i, 0]
+        y = sol[:i, 2]
+    return x, y
+  
+# Строим решение в виде графика и анимируем
 fig, ax = plt.subplots()
 
 ball, = plt.plot([], [], 'o', color='b')
 ball_line, = plt.plot([], [], '-', color='b')
-
-plt.plot([0], [0], 'o', color='y', ms=20)
-plt.plot(sol[:3][0], sol[:3][2])
+plt.plot([0], [0], 'o', color='r', ms=20)
+plt.plot(sol[:5][0], sol[:5][2])
 plt.savefig('test.png')
 
-def animate(i):
-    ball.set_data([sol[i][0]], [sol[i][2]])
-    ball_line.set_data(sol[:i][0], sol[:i][2])
-
-# # Строим решение в виде графика и анимируем
-# fig, ax = plt.subplots()
-
-# number_points = 1
-# points = []
-# points_lines = []
-
-# for i in range(number_points):
-#     points.append(plt.plot([], [], 'o', color='r'))
-#     points_lines.append(plt.plot([], [], '-', color='r'))
-
 # def animate(i):
-#     for j in range(number_points):
-#         points[j][0].set_data(sol[i, 4 * j], sol[i, 4 * j + 2])
-#         points_lines[j][0].set_data(sol[:i, 4 * j], sol[:i, 4 * j + 2])
+#     ball.set_data(solve_func(i, 'point'))
+#     ball_line.set_data(solve_func(i, 'line'))
 
 
 # ani = FuncAnimation(fig, animate, frames=frames, interval=30)
@@ -71,11 +64,4 @@ def animate(i):
 # ax.set_xlim(-edge, edge)
 # ax.set_ylim(-edge, edge)
 
-# ani.save('galaxy.gif')
-
-
-
-
-
-
-
+# ani.save('earth_sun.gif')
