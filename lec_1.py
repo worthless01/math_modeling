@@ -733,10 +733,10 @@ def Ve(r, a):
 # y0 = 0
 # v_y0 = - Ve(0.5*ae, ae)
 
-x01 = 0.5 * ae
-v_x01 = 0
-y01 = 0
-v_y01 = Ve(0.5*ae, ae)
+x01 = 0.5 * ae * np.cos(np.deg2rad(0))
+v_x01 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(0))
+y01 = - 0.5 * ae *  np.sin(np.deg2rad(0))
+v_y01 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(0))
 
 x02 = 0.5 * ae *  np.cos(np.deg2rad(3.6))
 v_x02 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(3.6))
@@ -748,15 +748,598 @@ v_x03 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(7.2))
 y03 = - 0.5 * ae *  np.sin(np.deg2rad(7.2))
 v_y03 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(7.2))
 
+x04 = 0.5 * ae * np.cos(np.deg2rad(10.8))
+v_x04 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(10.8))
+y04 = - 0.5 * ae * np.sin(np.deg2rad(10.8))
+v_y04 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(10.8))
+
+x05 = 0.5 * ae * np.cos(np.deg2rad(14.4))
+v_x05 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(14.4))
+y05 = - 0.5 * ae * np.sin(np.deg2rad(14.4))
+v_y05 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(14.4))
+
+x06 = 0.5 * ae * np.cos(np.deg2rad(18.0))
+v_x06 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(18.0))
+y06 = - 0.5 * ae * np.sin(np.deg2rad(18.0))
+v_y06 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(18.0))
+
+x07 = 0.5 * ae * np.cos(np.deg2rad(21.6))
+v_x07 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(21.6))
+y07 = - 0.5 * ae * np.sin(np.deg2rad(21.6))
+v_y07 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(21.6))
+
+x08 = 0.5 * ae * np.cos(np.deg2rad(25.2))
+v_x08 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(25.2))
+y08 = - 0.5 * ae * np.sin(np.deg2rad(25.2))
+v_y08 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(25.2))
+
+x09 = 0.5 * ae * np.cos(np.deg2rad(28.8))
+v_x09 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(28.8))
+y09 = - 0.5 * ae * np.sin(np.deg2rad(28.8))
+v_y09 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(28.8))
+
+x010 = 0.5 * ae * np.cos(np.deg2rad(32.4))
+v_x010 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(32.4))
+y010 = - 0.5 * ae * np.sin(np.deg2rad(32.4))
+v_y010 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(32.4))
+
+x011 = 0.5 * ae * np.cos(np.deg2rad(36.0))
+v_x011 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(36.0))
+y011 = - 0.5 * ae * np.sin(np.deg2rad(36.0))
+v_y011 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(36.0))
+
+x012 = 0.5 * ae * np.cos(np.deg2rad(39.6))
+v_x012 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(39.6))
+y012 = - 0.5 * ae * np.sin(np.deg2rad(39.6))
+v_y012 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(39.6))
+
+x013 = 0.5 * ae * np.cos(np.deg2rad(43.2))
+v_x013 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(43.2))
+y013 = - 0.5 * ae * np.sin(np.deg2rad(43.2))
+v_y013 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(43.2))
+
+x014 = 0.5 * ae * np.cos(np.deg2rad(46.8))
+v_x014 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(46.8))
+y014 = - 0.5 * ae * np.sin(np.deg2rad(46.8))
+v_y014 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(46.8))
+
+x015 = 0.5 * ae * np.cos(np.deg2rad(50.4))
+v_x015 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(50.4))
+y015 = - 0.5 * ae * np.sin(np.deg2rad(50.4))
+v_y015 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(50.4))
+
+x016 = 0.5 * ae * np.cos(np.deg2rad(54.0))
+v_x016 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(54.0))
+y016 = - 0.5 * ae * np.sin(np.deg2rad(54.0))
+v_y016 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(54.0))
+
+x017 = 0.5 * ae * np.cos(np.deg2rad(57.6))
+v_x017 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(57.6))
+y017 = - 0.5 * ae * np.sin(np.deg2rad(57.6))
+v_y017 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(57.6))
+
+x018 = 0.5 * ae * np.cos(np.deg2rad(61.2))
+v_x018 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(61.2))
+y018 = - 0.5 * ae * np.sin(np.deg2rad(61.2))
+v_y018 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(61.2))
+
+x019 = 0.5 * ae * np.cos(np.deg2rad(64.8))
+v_x019 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(64.8))
+y019 = - 0.5 * ae * np.sin(np.deg2rad(64.8))
+v_y019 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(64.8))
+
+x020 = 0.5 * ae * np.cos(np.deg2rad(68.4))
+v_x020 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(68.4))
+y020 = - 0.5 * ae * np.sin(np.deg2rad(68.4))
+v_y020 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(68.4))
+
+x021 = 0.5 * ae * np.cos(np.deg2rad(72.0))
+v_x021 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(72.0))
+y021 = - 0.5 * ae * np.sin(np.deg2rad(72.0))
+v_y021 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(72.0))
+
+x022 = 0.5 * ae * np.cos(np.deg2rad(75.6))
+v_x022 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(75.6))
+y022 = - 0.5 * ae * np.sin(np.deg2rad(75.6))
+v_y022 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(75.6))
+
+x023 = 0.5 * ae * np.cos(np.deg2rad(79.2))
+v_x023 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(79.2))
+y023 = - 0.5 * ae * np.sin(np.deg2rad(79.2))
+v_y023 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(79.2))
+
+x024 = 0.5 * ae * np.cos(np.deg2rad(82.8))
+v_x024 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(82.8))
+y024 = - 0.5 * ae * np.sin(np.deg2rad(82.8))
+v_y024 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(82.8))
+
+x025 = 0.5 * ae * np.cos(np.deg2rad(86.4))
+v_x025 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(86.4))
+y025 = - 0.5 * ae * np.sin(np.deg2rad(86.4))
+v_y025 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(86.4))
+
+x026 = 0.5 * ae * np.cos(np.deg2rad(90.0))
+v_x026 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(90.0))
+y026 = - 0.5 * ae * np.sin(np.deg2rad(90.0))
+v_y026 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(90.0))
+
+x027 = 0.5 * ae * np.cos(np.deg2rad(93.6))
+v_x027 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(93.6))
+y027 = - 0.5 * ae * np.sin(np.deg2rad(93.6))
+v_y027 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(93.6))
+
+x028 = 0.5 * ae * np.cos(np.deg2rad(97.2))
+v_x028 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(97.2))
+y028 = - 0.5 * ae * np.sin(np.deg2rad(97.2))
+v_y028 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(97.2))
+
+x029 = 0.5 * ae * np.cos(np.deg2rad(100.8))
+v_x029 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(100.8))
+y029 = - 0.5 * ae * np.sin(np.deg2rad(100.8))
+v_y029 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(100.8))
+
+x030 = 0.5 * ae * np.cos(np.deg2rad(104.4))
+v_x030 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(104.4))
+y030 = - 0.5 * ae * np.sin(np.deg2rad(104.4))
+v_y030 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(104.4))
+
+x031 = 0.5 * ae * np.cos(np.deg2rad(108.0))
+v_x031 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(108.0))
+y031 = - 0.5 * ae * np.sin(np.deg2rad(108.0))
+v_y031 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(108.0))
+
+x032 = 0.5 * ae * np.cos(np.deg2rad(111.6))
+v_x032 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(111.6))
+y032 = - 0.5 * ae * np.sin(np.deg2rad(111.6))
+v_y032 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(111.6))
+
+x033 = 0.5 * ae * np.cos(np.deg2rad(115.2))
+v_x033 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(115.2))
+y033 = - 0.5 * ae * np.sin(np.deg2rad(115.2))
+v_y033 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(115.2))
+
+x034 = 0.5 * ae * np.cos(np.deg2rad(118.8))
+v_x034 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(118.8))
+y034 = - 0.5 * ae * np.sin(np.deg2rad(118.8))
+v_y034 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(118.8))
+
+x035 = 0.5 * ae * np.cos(np.deg2rad(122.4))
+v_x035 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(122.4))
+y035 = - 0.5 * ae * np.sin(np.deg2rad(122.4))
+v_y035 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(122.4))
+
+x036 = 0.5 * ae * np.cos(np.deg2rad(126.0))
+v_x036 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(126.0))
+y036 = - 0.5 * ae * np.sin(np.deg2rad(126.0))
+v_y036 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(126.0))
+
+x037 = 0.5 * ae * np.cos(np.deg2rad(129.6))
+v_x037 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(129.6))
+y037 = - 0.5 * ae * np.sin(np.deg2rad(129.6))
+v_y037 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(129.6))
+
+x038 = 0.5 * ae * np.cos(np.deg2rad(133.2))
+v_x038 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(133.2))
+y038 = - 0.5 * ae * np.sin(np.deg2rad(133.2))
+v_y038 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(133.2))
+
+x039 = 0.5 * ae * np.cos(np.deg2rad(136.8))
+v_x039 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(136.8))
+y039 = - 0.5 * ae * np.sin(np.deg2rad(136.8))
+v_y039 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(136.8))
+
+x040 = 0.5 * ae * np.cos(np.deg2rad(140.4))
+v_x040 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(140.4))
+y040 = - 0.5 * ae * np.sin(np.deg2rad(140.4))
+v_y040 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(140.4))
+
+x041 = 0.5 * ae * np.cos(np.deg2rad(144.0))
+v_x041 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(144.0))
+y041 = - 0.5 * ae * np.sin(np.deg2rad(144.0))
+v_y041 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(144.0))
+
+x042 = 0.5 * ae * np.cos(np.deg2rad(147.6))
+v_x042 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(147.6))
+y042 = - 0.5 * ae * np.sin(np.deg2rad(147.6))
+v_y042 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(147.6))
+
+x043 = 0.5 * ae * np.cos(np.deg2rad(151.2))
+v_x043 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(151.2))
+y043 = - 0.5 * ae * np.sin(np.deg2rad(151.2))
+v_y043 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(151.2))
+
+x044 = 0.5 * ae * np.cos(np.deg2rad(154.8))
+v_x044 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(154.8))
+y044 = - 0.5 * ae * np.sin(np.deg2rad(154.8))
+v_y044 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(154.8))
+
+x045 = 0.5 * ae * np.cos(np.deg2rad(158.4))
+v_x045 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(158.4))
+y045 = - 0.5 * ae * np.sin(np.deg2rad(158.4))
+v_y045 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(158.4))
+
+x046 = 0.5 * ae * np.cos(np.deg2rad(162.0))
+v_x046 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(162.0))
+y046 = - 0.5 * ae * np.sin(np.deg2rad(162.0))
+v_y046 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(162.0))
+
+x047 = 0.5 * ae * np.cos(np.deg2rad(165.6))
+v_x047 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(165.6))
+y047 = - 0.5 * ae * np.sin(np.deg2rad(165.6))
+v_y047 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(165.6))
+
+x048 = 0.5 * ae * np.cos(np.deg2rad(169.2))
+v_x048 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(169.2))
+y048 = - 0.5 * ae * np.sin(np.deg2rad(169.2))
+v_y048 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(169.2))
+
+x049 = 0.5 * ae * np.cos(np.deg2rad(172.8))
+v_x049 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(172.8))
+y049 = - 0.5 * ae * np.sin(np.deg2rad(172.8))
+v_y049 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(172.8))
+
+x050 = 0.5 * ae * np.cos(np.deg2rad(176.4))
+v_x050 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(176.4))
+y050 = - 0.5 * ae * np.sin(np.deg2rad(176.4))
+v_y050 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(176.4))
+
+x051 = 0.5 * ae * np.cos(np.deg2rad(180.0))
+v_x051 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(180.0))
+y051 = - 0.5 * ae * np.sin(np.deg2rad(180.0))
+v_y051 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(180.0))
+
+x052 = 0.5 * ae * np.cos(np.deg2rad(183.6))
+v_x052 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(183.6))
+y052 = - 0.5 * ae * np.sin(np.deg2rad(183.6))
+v_y052 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(183.6))
+
+x053 = 0.5 * ae * np.cos(np.deg2rad(187.2))
+v_x053 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(187.2))
+y053 = - 0.5 * ae * np.sin(np.deg2rad(187.2))
+v_y053 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(187.2))
+
+x054 = 0.5 * ae * np.cos(np.deg2rad(190.8))
+v_x054 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(190.8))
+y054 = - 0.5 * ae * np.sin(np.deg2rad(190.8))
+v_y054 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(190.8))
+
+x055 = 0.5 * ae * np.cos(np.deg2rad(194.4))
+v_x055 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(194.4))
+y055 = - 0.5 * ae * np.sin(np.deg2rad(194.4))
+v_y055 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(194.4))
+
+x056 = 0.5 * ae * np.cos(np.deg2rad(198.0))
+v_x056 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(198.0))
+y056 = - 0.5 * ae * np.sin(np.deg2rad(198.0))
+v_y056 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(198.0))
+
+x057 = 0.5 * ae * np.cos(np.deg2rad(201.6))
+v_x057 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(201.6))
+y057 = - 0.5 * ae * np.sin(np.deg2rad(201.6))
+v_y057 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(201.6))
+
+x058 = 0.5 * ae * np.cos(np.deg2rad(205.2))
+v_x058 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(205.2))
+y058 = - 0.5 * ae * np.sin(np.deg2rad(205.2))
+v_y058 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(205.2))
+
+x059 = 0.5 * ae * np.cos(np.deg2rad(208.8))
+v_x059 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(208.8))
+y059 = - 0.5 * ae * np.sin(np.deg2rad(208.8))
+v_y059 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(208.8))
+
+x060 = 0.5 * ae * np.cos(np.deg2rad(212.4))
+v_x060 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(212.4))
+y060 = - 0.5 * ae * np.sin(np.deg2rad(212.4))
+v_y060 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(212.4))
+
+x061 = 0.5 * ae * np.cos(np.deg2rad(216.0))
+v_x061 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(216.0))
+y061 = - 0.5 * ae * np.sin(np.deg2rad(216.0))
+v_y061 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(216.0))
+
+x062 = 0.5 * ae * np.cos(np.deg2rad(219.6))
+v_x062 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(219.6))
+y062 = - 0.5 * ae * np.sin(np.deg2rad(219.6))
+v_y062 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(219.6))
+
+x063 = 0.5 * ae * np.cos(np.deg2rad(223.2))
+v_x063 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(223.2))
+y063 = - 0.5 * ae * np.sin(np.deg2rad(223.2))
+v_y063 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(223.2))
+
+x064 = 0.5 * ae * np.cos(np.deg2rad(226.8))
+v_x064 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(226.8))
+y064 = - 0.5 * ae * np.sin(np.deg2rad(226.8))
+v_y064 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(226.8))
+
+x065 = 0.5 * ae * np.cos(np.deg2rad(230.4))
+v_x065 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(230.4))
+y065 = - 0.5 * ae * np.sin(np.deg2rad(230.4))
+v_y065 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(230.4))
+
+x066 = 0.5 * ae * np.cos(np.deg2rad(234.0))
+v_x066 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(234.0))
+y066 = - 0.5 * ae * np.sin(np.deg2rad(234.0))
+v_y066 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(234.0))
+
+x067 = 0.5 * ae * np.cos(np.deg2rad(237.6))
+v_x067 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(237.6))
+y067 = - 0.5 * ae * np.sin(np.deg2rad(237.6))
+v_y067 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(237.6))
+
+x068 = 0.5 * ae * np.cos(np.deg2rad(241.2))
+v_x068 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(241.2))
+y068 = - 0.5 * ae * np.sin(np.deg2rad(241.2))
+v_y068 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(241.2))
+
+x069 = 0.5 * ae * np.cos(np.deg2rad(244.8))
+v_x069 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(244.8))
+y069 = - 0.5 * ae * np.sin(np.deg2rad(244.8))
+v_y069 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(244.8))
+
+x070 = 0.5 * ae * np.cos(np.deg2rad(248.4))
+v_x070 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(248.4))
+y070 = - 0.5 * ae * np.sin(np.deg2rad(248.4))
+v_y070 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(248.4))
+
+x071 = 0.5 * ae * np.cos(np.deg2rad(252.0))
+v_x071 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(252.0))
+y071 = - 0.5 * ae * np.sin(np.deg2rad(252.0))
+v_y071 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(252.0))
+
+x072 = 0.5 * ae * np.cos(np.deg2rad(255.6))
+v_x072 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(255.6))
+y072 = - 0.5 * ae * np.sin(np.deg2rad(255.6))
+v_y072 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(255.6))
+
+x073 = 0.5 * ae * np.cos(np.deg2rad(259.2))
+v_x073 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(259.2))
+y073 = - 0.5 * ae * np.sin(np.deg2rad(259.2))
+v_y073 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(259.2))
+
+x074 = 0.5 * ae * np.cos(np.deg2rad(262.8))
+v_x074 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(262.8))
+y074 = - 0.5 * ae * np.sin(np.deg2rad(262.8))
+v_y074 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(262.8))
+
+x075 = 0.5 * ae * np.cos(np.deg2rad(266.4))
+v_x075 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(266.4))
+y075 = - 0.5 * ae * np.sin(np.deg2rad(266.4))
+v_y075 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(266.4))
+
+x076 = 0.5 * ae * np.cos(np.deg2rad(270.0))
+v_x076 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(270.0))
+y076 = - 0.5 * ae * np.sin(np.deg2rad(270.0))
+v_y076 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(270.0))
+
+x077 = 0.5 * ae * np.cos(np.deg2rad(273.6))
+v_x077 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(273.6))
+y077 = - 0.5 * ae * np.sin(np.deg2rad(273.6))
+v_y077 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(273.6))
+
+x078 = 0.5 * ae * np.cos(np.deg2rad(277.2))
+v_x078 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(277.2))
+y078 = - 0.5 * ae * np.sin(np.deg2rad(277.2))
+v_y078 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(277.2))
+
+x079 = 0.5 * ae * np.cos(np.deg2rad(280.8))
+v_x079 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(280.8))
+y079 = - 0.5 * ae * np.sin(np.deg2rad(280.8))
+v_y079 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(280.8))
+
+x080 = 0.5 * ae * np.cos(np.deg2rad(284.4))
+v_x080 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(284.4))
+y080 = - 0.5 * ae * np.sin(np.deg2rad(284.4))
+v_y080 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(284.4))
+
+x081 = 0.5 * ae * np.cos(np.deg2rad(288.0))
+v_x081 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(288.0))
+y081 = - 0.5 * ae * np.sin(np.deg2rad(288.0))
+v_y081 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(288.0))
+
+x082 = 0.5 * ae * np.cos(np.deg2rad(291.6))
+v_x082 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(291.6))
+y082 = - 0.5 * ae * np.sin(np.deg2rad(291.6))
+v_y082 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(291.6))
+
+x083 = 0.5 * ae * np.cos(np.deg2rad(295.2))
+v_x083 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(295.2))
+y083 = - 0.5 * ae * np.sin(np.deg2rad(295.2))
+v_y083 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(295.2))
+
+x084 = 0.5 * ae * np.cos(np.deg2rad(298.8))
+v_x084 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(298.8))
+y084 = - 0.5 * ae * np.sin(np.deg2rad(298.8))
+v_y084 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(298.8))
+
+x085 = 0.5 * ae * np.cos(np.deg2rad(302.4))
+v_x085 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(302.4))
+y085 = - 0.5 * ae * np.sin(np.deg2rad(302.4))
+v_y085 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(302.4))
+
+x086 = 0.5 * ae * np.cos(np.deg2rad(306.0))
+v_x086 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(306.0))
+y086 = - 0.5 * ae * np.sin(np.deg2rad(306.0))
+v_y086 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(306.0))
+
+x087 = 0.5 * ae * np.cos(np.deg2rad(309.6))
+v_x087 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(309.6))
+y087 = - 0.5 * ae * np.sin(np.deg2rad(309.6))
+v_y087 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(309.6))
+
+x088 = 0.5 * ae * np.cos(np.deg2rad(313.2))
+v_x088 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(313.2))
+y088 = - 0.5 * ae * np.sin(np.deg2rad(313.2))
+v_y088 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(313.2))
+
+x089 = 0.5 * ae * np.cos(np.deg2rad(316.8))
+v_x089 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(316.8))
+y089 = - 0.5 * ae * np.sin(np.deg2rad(316.8))
+v_y089 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(316.8))
+
+x090 = 0.5 * ae * np.cos(np.deg2rad(320.4))
+v_x090 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(320.4))
+y090 = - 0.5 * ae * np.sin(np.deg2rad(320.4))
+v_y090 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(320.4))
+
+x091 = 0.5 * ae * np.cos(np.deg2rad(324.0))
+v_x091 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(324.0))
+y091 = - 0.5 * ae * np.sin(np.deg2rad(324.0))
+v_y091 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(324.0))
+
+x092 = 0.5 * ae * np.cos(np.deg2rad(327.6))
+v_x092 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(327.6))
+y092 = - 0.5 * ae * np.sin(np.deg2rad(327.6))
+v_y092 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(327.6))
+
+x093 = 0.5 * ae * np.cos(np.deg2rad(331.2))
+v_x093 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(331.2))
+y093 = - 0.5 * ae * np.sin(np.deg2rad(331.2))
+v_y093 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(331.2))
+
+x094 = 0.5 * ae * np.cos(np.deg2rad(334.8))
+v_x094 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(334.8))
+y094 = - 0.5 * ae * np.sin(np.deg2rad(334.8))
+v_y094 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(334.8))
+
+x095 = 0.5 * ae * np.cos(np.deg2rad(338.4))
+v_x095 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(338.4))
+y095 = - 0.5 * ae * np.sin(np.deg2rad(338.4))
+v_y095 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(338.4))
+
+x096 = 0.5 * ae * np.cos(np.deg2rad(342.0))
+v_x096 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(342.0))
+y096 = - 0.5 * ae * np.sin(np.deg2rad(342.0))
+v_y096 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(342.0))
+
+x097 = 0.5 * ae * np.cos(np.deg2rad(345.6))
+v_x097 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(345.6))
+y097 = - 0.5 * ae * np.sin(np.deg2rad(345.6))
+v_y097 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(345.6))
+
+x098 = 0.5 * ae * np.cos(np.deg2rad(349.2))
+v_x098 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(349.2))
+y098 = - 0.5 * ae * np.sin(np.deg2rad(349.2))
+v_y098 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(349.2))
+
+x099 = 0.5 * ae * np.cos(np.deg2rad(352.8))
+v_x099 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(352.8))
+y099 = - 0.5 * ae * np.sin(np.deg2rad(352.8))
+v_y099 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(352.8))
+
+x0100 = 0.5 * ae * np.cos(np.deg2rad(356.4))
+v_x0100 = - Ve(0.5*ae, ae) * np.sin(np.deg2rad(356.4))
+y0100 = - 0.5 * ae * np.sin(np.deg2rad(356.4))
+v_y0100 = Ve(0.5*ae, ae) * np.cos(np.deg2rad(356.4))
+
 s0 = (x01, v_x01, y01, v_y01,
-      x02, v_x02, y02, v_y02)
+      x02, v_x02, y02, v_y02,
+      x03, v_x03, y03, v_y03,
+      x04, v_x04, y04, v_y04,
+      x05, v_x05, y05, v_y05,
+      x06, v_x06, y06, v_y06,
+      x07, v_x07, y07, v_y07,
+      x08, v_x08, y08, v_y08,
+      x09, v_x09, y09, v_y09,
+      x010, v_x010, y010, v_y010,
+      x011, v_x011, y011, v_y011,
+      x012, v_x012, y012, v_y012,
+      x013, v_x013, y013, v_y013,
+      x014, v_x014, y014, v_y014,
+      x015, v_x015, y015, v_y015,
+      x016, v_x016, y016, v_y016,
+      x017, v_x017, y017, v_y017,
+      x018, v_x018, y018, v_y018,
+      x019, v_x019, y019, v_y019,
+      x020, v_x020, y020, v_y020,
+      x021, v_x021, y021, v_y021,
+      x022, v_x022, y022, v_y022,
+      x023, v_x023, y023, v_y023,
+      x024, v_x024, y024, v_y024,
+      x025, v_x025, y025, v_y025,
+      x026, v_x026, y026, v_y026,
+      x027, v_x027, y027, v_y027,
+      x028, v_x028, y028, v_y028,
+      x029, v_x029, y029, v_y029,
+      x030, v_x030, y030, v_y030,
+      x031, v_x031, y031, v_y031,
+      x032, v_x032, y032, v_y032,
+      x033, v_x033, y033, v_y033,
+      x034, v_x034, y034, v_y034,
+      x035, v_x035, y035, v_y035,
+      x036, v_x036, y036, v_y036,
+      x037, v_x037, y037, v_y037,
+      x038, v_x038, y038, v_y038,
+      x039, v_x039, y039, v_y039,
+      x040, v_x040, y040, v_y040,
+      x041, v_x041, y041, v_y041,
+      x042, v_x042, y042, v_y042,
+      x043, v_x043, y043, v_y043,
+      x044, v_x044, y044, v_y044,
+      x045, v_x045, y045, v_y045,
+      x046, v_x046, y046, v_y046,
+      x047, v_x047, y047, v_y047,
+      x048, v_x048, y048, v_y048,
+      x049, v_x049, y049, v_y049,
+      x050, v_x050, y050, v_y050,
+      x051, v_x051, y051, v_y051,
+      x052, v_x052, y052, v_y052,
+      x053, v_x053, y053, v_y053,
+      x054, v_x054, y054, v_y054,
+      x055, v_x055, y055, v_y055,
+      x056, v_x056, y056, v_y056,
+      x057, v_x057, y057, v_y057,
+      x058, v_x058, y058, v_y058,
+      x059, v_x059, y059, v_y059,
+      x060, v_x060, y060, v_y060,
+      x061, v_x061, y061, v_y061,
+      x062, v_x062, y062, v_y062,
+      x063, v_x063, y063, v_y063,
+      x064, v_x064, y064, v_y064,
+      x065, v_x065, y065, v_y065,
+      x066, v_x066, y066, v_y066,
+      x067, v_x067, y067, v_y067,
+      x068, v_x068, y068, v_y068,
+      x069, v_x069, y069, v_y069,
+      x070, v_x070, y070, v_y070,
+      x071, v_x071, y071, v_y071,
+      x072, v_x072, y072, v_y072,
+      x073, v_x073, y073, v_y073,
+      x074, v_x074, y074, v_y074,
+      x075, v_x075, y075, v_y075,
+      x076, v_x076, y076, v_y076,
+      x077, v_x077, y077, v_y077,
+      x078, v_x078, y078, v_y078,
+      x079, v_x079, y079, v_y079,
+      x080, v_x080, y080, v_y080,
+      x081, v_x081, y081, v_y081,
+      x082, v_x082, y082, v_y082,
+      x083, v_x083, y083, v_y083,
+      x084, v_x084, y084, v_y084,
+      x085, v_x085, y085, v_y085,
+      x086, v_x086, y086, v_y086,
+      x087, v_x087, y087, v_y087,
+      x088, v_x088, y088, v_y088,
+      x089, v_x089, y089, v_y089,
+      x090, v_x090, y090, v_y090,
+      x091, v_x091, y091, v_y091,
+      x092, v_x092, y092, v_y092,
+      x093, v_x093, y093, v_y093,
+      x094, v_x094, y094, v_y094,
+      x095, v_x095, y095, v_y095,
+      x096, v_x096, y096, v_y096,
+      x097, v_x097, y097, v_y097,
+      x098, v_x098, y098, v_y098,
+      x099, v_x099, y099, v_y099,
+      x0100, v_x0100, y0100, v_y0100)
 
 sol = odeint(move_func, s0, t)
 
 # Строим решение в виде графика и анимируем
 fig, ax = plt.subplots()
 
-number_points = 2
+number_points = 100
 points = []
 points_lines = []
 
