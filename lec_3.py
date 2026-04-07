@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 # Определяем переменную величину
-frames = 3500
+frames = 800
 seconds_in_year = 365 * 24 * 60 * 60
-years = 10
+years = 3      
 t = np.linspace(0, years*seconds_in_year, frames)
 
 # Определяем функцию для системы диф. уравнений
@@ -15,14 +15,14 @@ def move_func(s, t):
      xc19, v_xc19, yc19, v_yc19) = s
 
     dxdtc1 = v_xc1
-    dv_xdtc1 = - G * M * xc1 / (xc1**2 + yc1**2)**1.5
+    dv_xdtc1 = - G * M * xc1 / (xc1 + yc1)**1.5
     dydtc1 = v_yc1
-    dv_ydtc1 = - G * M * yc1 / (xc1**2 + yc1**2)**1.5
+    dv_ydtc1 = - G * M * yc1 / (xc1 + yc1)**1.5
     
     dxdtc19 = v_xc19
-    dv_xdtc19 = - G * M * xc19 / (xc19**2 + yc19**2)**1.5
+    dv_xdtc19 = - G * M * xc19 / (xc19 + yc19)**1.5
     dydtc19 = v_yc19
-    dv_ydtc19 = - G * M * yc19 / (xc19**2 + yc19**2)**1.5
+    dv_ydtc19 = - G * M * yc19 / (xc19 + yc19)**1.5
   
     return (dxdtc1, dv_xdtc1, dydtc1, dv_ydtc1, 
             dxdtc19, dv_xdtc19, dydtc19, dv_ydtc19)
@@ -63,7 +63,7 @@ sol = odeint(move_func, s0, t)
 # Строим решение в виде графика и анимируем
 fig, ax = plt.subplots()
 
-number_points = 2
+number_points = 1
 points = []
 points_lines = []
 
@@ -82,6 +82,6 @@ plt.axis('equal')
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
-plt.plot([0], [0], 'o', color='r', ms=20)
+# plt.plot([0], [0], 'o', color='r', ms=20)
 
 ani.save('onq_body.gif', writer='pillow')
