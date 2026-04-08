@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 # Определяем переменную величину
-frames = 900
+frames = 2250
 seconds_in_year = 365 * 24 * 60 * 60
-years = 6
+years = 15
 t = np.linspace(0, years*seconds_in_year, frames)
 
 # Определяем функцию для системы диф. уравнений
@@ -2908,4 +2908,4 @@ ax.set_ylim(-edge, edge)
 
 # plt.plot([0], [0], 'o', color='w', ms=20)
 
-ani.save('galaxy1.gif', writer='pillow')
+ani.save('galaxy2.gif', writer='pillow')
