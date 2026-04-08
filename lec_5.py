@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 # Определяем переменную величину
-frames = 3500
+frames = 900
 seconds_in_year = 365 * 24 * 60 * 60
-years = 10
+years = 6
 t = np.linspace(0, years*seconds_in_year, frames)
 
 # Определяем функцию для системы диф. уравнений
@@ -2594,7 +2594,7 @@ yc18 = center_radius1 * np.sin(np.deg2rad(angle18))
 v_xc18 = -angular_speed * yc18
 v_yc18 = angular_speed * xc18
 
-center_radius2 = 0.5 * ae
+center_radius2 = 0.3 * ae
 
 angle19 = 1
 xc19 = center_radius2 * np.cos(np.deg2rad(angle19))
@@ -2842,12 +2842,56 @@ fig, ax = plt.subplots()
 ax.set_facecolor('k')
 
 number_points = 135
+colors = []
+# Центральное сгущение: индексы 100..134 (первые 18 с r=0.5ae, остальные 17 с r=0.3ae)
+for idx in range(number_points):
+    if idx < 100:  # Звёзды спиральных рукавов
+        x0 = s0[4 * idx]
+        y0 = s0[4 * idx + 2]
+        r_norm = np.sqrt(x0**2 + y0**2) / ae   # kappa ∈ [0.5, 1.0]
+        # Угол (чтобы выделить спиральные ветви для розовых акцентов)
+        angle = np.arctan2(y0, x0) % (2*np.pi)
+        
+        # Основной градиент: от золотисто-жёлтого (r=0.5) к холодному голубому (r=1.0)
+        t = (r_norm - 0.5) / 0.5               # 0 -> 0.5, 1 -> 1.0
+        
+        # Базовые RGB для старого (жёлтого) и молодого (голубого) населения
+        r_old, g_old, b_old = 1.0, 0.9, 0.4    # тёплый золотистый
+        r_young, g_young, b_young = 0.4, 0.7, 1.0  # холодный голубой
+        
+        red   = r_old * (1 - t) + r_young * t
+        green = g_old * (1 - t) + g_young * t
+        blue  = b_old * (1 - t) + b_young * t
+        
+        # Добавляем розовато‑пурпурный оттенок в определённых угловых секторах,
+        # имитируя области HII (звёздообразования), как на снимке NGC 6744.
+        # Усиливаем эффект на средних радиусах (t ~ 0.3..0.7)
+        if 0.2 < t < 0.8:
+            # Два сектора, примерно соответствующие спиральным рукавам
+            if (0.8 < angle < 1.6) or (4.0 < angle < 4.8):
+                # Лёгкая добавка пурпурного (смесь красного и синего)
+                purple_strength = 0.3 * np.sin(np.pi * (t - 0.2) / 0.6)  # плавное появление
+                red   = red   * (1 - purple_strength) + 1.0 * purple_strength
+                green = green * (1 - purple_strength) + 0.5 * purple_strength
+                blue  = blue  * (1 - purple_strength) + 0.8 * purple_strength
+        
+        # Небольшой случайный разброс для естественности
+        red   = np.clip(red   + np.random.uniform(-0.05, 0.05), 0, 1)
+        green = np.clip(green + np.random.uniform(-0.05, 0.05), 0, 1)
+        blue  = np.clip(blue  + np.random.uniform(-0.05, 0.05), 0, 1)
+        
+        colors.append((red, green, blue))
+    else:  # Центральные точки (балдж)
+        # Разделяем на две группы по радиусу
+        if idx - 100 < 18:   # c1..c18 (r = 0.5 ae) – внутреннее ядро
+            colors.append((1.0, 0.85, 0.5))   # насыщенный жёлто‑оранжевый
+        else:                # c19..c35 (r = 0.3 ae) – внешняя часть балджа
+            colors.append((1.0, 0.95, 0.7))   # светло‑жёлтый, почти белый
 points = []
 points_lines = []
 
 for i in range(number_points):
-    # points.append(plt.plot([], [], ',', color='r'))
-    points.append(plt.plot([], [], 'o', color='w', ms='0.5'))
+    points.append(plt.plot([], [], 'o', color=colors[i], ms='0.5'))
     # points_lines.append(plt.plot([], [], '-', color='r'))
 
 def animate(i):
@@ -2864,4 +2908,4 @@ ax.set_ylim(-edge, edge)
 
 # plt.plot([0], [0], 'o', color='w', ms=20)
 
-ani.save('galaxy.gif', writer='pillow')
+ani.save('galaxy1.gif', writer='pillow')
